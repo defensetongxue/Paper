@@ -1,0 +1,413 @@
+%File: anonymous-submission-latex-2023.tex
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\usepackage[submission]{aaai23}  % DO NOT CHANGE THIS
+\usepackage{times}  % DO NOT CHANGE THIS
+\usepackage{helvet}  % DO NOT CHANGE THIS
+\usepackage{courier}  % DO NOT CHANGE THIS
+\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
+\usepackage{graphicx} % DO NOT CHANGE THIS
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{texvc}
+\urlstyle{rm} % DO NOT CHANGE THIS
+\def\UrlFont{\rm}  % DO NOT CHANGE THIS
+\usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\frenchspacing  % DO NOT CHANGE THIS
+\setlength{\pdfpagewidth}{8.5in} % DO NOT CHANGE THIS
+\setlength{\pdfpageheight}{11in} % DO NOT CHANGE THIS
+%
+% These are recommended to typeset algorithms but not required. See the subsubsection on algorithms. Remove them if you don't have algorithms in your paper.
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+%
+% These are are recommended to typeset listings but not required. See the subsubsection on listing. Remove this block if you don't have listings in your paper.
+\usepackage{newfloat}
+\usepackage{listings}
+\DeclareCaptionStyle{ruled}{labelfont=normalfont,labelsep=colon,strut=off} % DO NOT CHANGE THIS
+\lstset{%
+	basicstyle={\footnotesize\ttfamily},% footnotesize acceptable for monospace
+	numbers=left,numberstyle=\footnotesize,xleftmargin=2em,% show line numbers, remove this entire line if you don't want the numbers.
+	aboveskip=0pt,belowskip=0pt,%
+	showstringspaces=false,tabsize=2,breaklines=true}
+\floatstyle{ruled}
+\newfloat{listing}{tb}{lst}{}
+\floatname{listing}{Listing}
+%
+% Keep the \pdfinfo as shown here. There's no need
+% for you to add the /Title and /Author tags.
+\pdfinfo{
+/TemplateVersion (2023.1)
+}
+
+% DISALLOWED PACKAGES
+% \usepackage{authblk} -- This package is specifically forbidden
+% \usepackage{balance} -- This package is specifically forbidden
+% \usepackage{color (if used in text)
+% \usepackage{CJK} -- This package is specifically forbidden
+% \usepackage{float} -- This package is specifically forbidden
+% \usepackage{flushend} -- This package is specifically forbidden
+% \usepackage{fontenc} -- This package is specifically forbidden
+% \usepackage{fullpage} -- This package is specifically forbidden
+% \usepackage{geometry} -- This package is specifically forbidden
+% \usepackage{grffile} -- This package is specifically forbidden
+% \usepackage{hyperref} -- This package is specifically forbidden
+% \usepackage{navigator} -- This package is specifically forbidden
+% (or any other package that embeds links such as navigator or hyperref)
+% \indentfirst} -- This package is specifically forbidden
+% \layout} -- This package is specifically forbidden
+% \multicol} -- This package is specifically forbidden
+% \nameref} -- This package is specifically forbidden
+% \usepackage{savetrees} -- This package is specifically forbidden
+% \usepackage{setspace} -- This package is specifically forbidden
+% \usepackage{stfloats} -- This package is specifically forbidden
+% \usepackage{tabu} -- This package is specifically forbidden
+% \usepackage{titlesec} -- This package is specifically forbidden
+% \usepackage{tocbibind} -- This package is specifically forbidden
+% \usepackage{ulem} -- This package is specifically forbidden
+% \usepackage{wrapfig} -- This package is specifically forbidden
+% DISALLOWED COMMANDS
+% \nocopyright -- Your paper will not be published if you use this command
+% \addtolength -- This command may not be used
+% \balance -- This command may not be used
+% \baselinestretch -- Your paper will not be published if you use this command
+% \clearpage -- No page breaks of any kind may be used for the final version of your paper
+% \columnsep -- This command may not be used
+% \newpage -- No page breaks of any kind may be used for the final version of your paper
+% \pagebreak -- No page breaks of any kind may be used for the final version of your paperr
+% \pagestyle -- This command may not be used
+% \tiny -- This is not an acceptable font size.
+% \vspace{- -- No negative value may be used in proximity of a caption, figure, table, section, subsection, subsubsection, or reference
+% \vskip{- -- No negative value may be used to alter spacing above or below a caption, figure, table, section, subsection, subsubsection, or reference
+
+\setcounter{secnumdepth}{0} %May be changed to 1 or 2 if section numbers are desired.
+
+% The file aaai23.sty is the style file for AAAI Press
+% proceedings, working notes, and technical reports.
+%
+
+% Title
+
+% Your title must be in mixed case, not sentence case.
+% That means all verbs (including short verbs like be, is, using,and go),
+% nouns, adverbs, adjectives should be capitalized, including both words in hyphenated terms, while
+% articles, conjunctions, and prepositions are lower case unless they
+% directly follow a colon or long dash
+\title{AAAI Press Anonymous Submission\\Instructions for Authors Using \LaTeX{}}
+\author{
+    %Authors
+    % All authors must be in the same font size and format.
+    Written by AAAI Press Staff\textsuperscript{\rm 1}\thanks{With help from the AAAI Publications Committee.}\\
+    AAAI Style Contributions by Pater Patel Schneider,
+    Sunil Issar,\\
+    J. Scott Penberthy,
+    George Ferguson,
+    Hans Guesgen,
+    Francisco Cruz\equalcontrib,
+    Marc Pujol-Gonzalez\equalcontrib
+}
+\affiliations{
+    %Afiliations
+    \textsuperscript{\rm 1}Association for the Advancement of Artificial Intelligence\\
+    % If you have multiple authors and multiple affiliations
+    % use superscripts in text and roman font to identify them.
+    % For example,
+
+    % Sunil Issar, \textsuperscript{\rm 2}
+    % J. Scott Penberthy, \textsuperscript{\rm 3}
+    % George Ferguson,\textsuperscript{\rm 4}
+    % Hans Guesgen, \textsuperscript{\rm 5}.
+    % Note that the comma should be placed BEFORE the superscript for optimum readability
+
+    1900 Embarcadero Road, Suite 101\\
+    Palo Alto, California 94303-3310 USA\\
+    % email address must be in roman text type, not monospace or sans serif
+    publications23@aaai.org
+%
+% See more examples next
+}
+
+%Example, Single Author, ->> remove \iffalse,\fi and place them surrounding AAAI title to use it
+\iffalse
+\title{My Publication Title --- Single Author}
+\author {
+    Author Name
+}
+\affiliations{
+    Affiliation\\
+    Affiliation Line 2\\
+    name@example.com
+}
+\fi
+
+\iffalse
+%Example, Multiple Authors, ->> remove \iffalse,\fi and place them surrounding AAAI title to use it
+\title{My Publication Title --- Multiple Authors}
+\author {
+    % Authors
+    First Author Name,\textsuperscript{\rm 1}
+    Second Author Name, \textsuperscript{\rm 2}
+    Third Author Name \textsuperscript{\rm 1}
+}
+\affiliations {
+    % Affiliations
+    \textsuperscript{\rm 1} Affiliation 1\\
+    \textsuperscript{\rm 2} Affiliation 2\\
+    firstAuthor@affiliation1.com, secondAuthor@affilation2.com, thirdAuthor@affiliation1.com
+}
+\fi
+
+
+% REMOVE THIS: bibentry
+% This is only needed to show inline citations in the guidelines document. You should not need it and can safely delete it.
+\usepackage{bibentry}
+% END REMOVE bibentry
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+
+Attention Mechanism has been successfully applied in Graph Neural Networks(GNNs). However, as the training process is limited to the target graph and can't rely on the extra data to perform the pretraining project like Nlp or CV. The conclusions, when importing embedding to the attention layer, will not be the significant determinants,that leads to the stage where the attention score tends to have strong similarities which hinders GNNs from even fitting the training data, especially in heterogeneous graph. To remove this limitation, we introduce a graph attention variant that generates attention scores through GNN architectures. We perform an extensive evaluation and show that using structural information and features simultaneously can extract more different attention scores and get a better performance.
+
+\end{abstract}
+
+\section{ INTRODUCTION}
+
+Graph Neural Networks (GNNs) have become increasingly
+popular since many real-world relational data can be represented as graphs, such as social networks (Bian et al. 2020),
+molecules (Gilmer et al. 2017) and financial data (Yang
+et al. 2020)%<!-- (ProtGNN: Zaixi Zhang1) -->.
+As long as there are abstractable connections between entities,we can model the entities and their relationships with nodes and edges.GNNs update the nodes' representation by analysing the message sending from their neighbors and themselves to generate a more meaningful embedding for the downstream tasks.
+
+
+GNN variants mainly make the improments in how each node aggregates and combines the representations of its neighbors with its own(cheby,GAT,sknet), which node should be  selected as 'neighbours' to send the message(GASE,GEOM).GATs selectively employ information from the neighbours by attention mechanism which generalizes the standard averaging or max-pooling of neighbors %(<!--from GATv2-->Kipf and Welling, 2017; Hamilton et al., 2017)
+.In general GAT, A linear transformation is made to the feature of the nodes.And each node compute a weighted average of its neighbour through a linear transformation from the combination of their low dimension representations. The work also generalizes the Transformer %引用
+which is% <!--transoformer介绍--> 
+and GATv2 %引用
+which modify the order of internal operations and achieve a dynamic attention mechanism
+
+GAT is one of the most popular GNN architectures (Bronstein et al., 2021). However,in this paper, we discover that GAT still have some trouble in getting sufficiently distinguished attention scores in some datasets. %我们在同一个数据集计算GAT计算attention的方差来证明这一点,放一个GAT的平均图%.We hold that that is because the node generate the query and key byits own representation in GAT.Further,as the organization of nodes and edges has no commonality across datasets,on the other word,the training process of GNNs be limied on the target dataset so that the messages are always delivered at nodes with edges which cause their low dimensions tend to be resemble.
+
+To overcome the limitation,we introduce a new formula for GAT by generating query and key with GNNs model such as GCN or it's variant and replacing addition with dot product. We conducted a large number of searches on the schemes used to calculate queries and keys and find that query and key calculated by GNNs are more distinguishable than ordinary linear layers and the model will get a better performance in the graph of higher heterophily.
+
+
+\section{PRELIMINARIES}
+
+A directed graph $\mathcal{G}=(\mathcal{V},\mathcal{E})$, contains nodes $\mathcal{V}=\{1,...,n\}$ and edges $\mathcal{E}\in \mathcal{V}\times\mathcal{V}$ where $(i,j)\in \mathcal{E}$ denotes a edge from a node $i$ to a node $j$. We assume that ever node $i\in \mathcal{V}$ has an initial representaion $h_i^{0}\in \mathbb{R}^{d_0}$
+\section{ Homophily and Heterophily of the graph}
+We using the $\beta$ to measure the node homophily or heterophily of the graph.%(GROM)引用
+{\small
+
+\begin{equation}
+    \beta =\frac{1}{N}\sum_{\mathcal{v}\in \mathcal{V}}\frac{
+    Number\   of\   v's\   neighbors\ who\  have \  the\   same \  label \  as\   \mathcal{v} \\
+    }{Number \  of\   \mathcal{v}'s \  neighbors}
+\end{equation}
+ }
+The graph which has a higher $\beta$ implies that the node of the graph tend to have more homophily neighbors in term of node labels and vice versa.
+
+\subsection{GNN }
+A graph neural network layer update every node representation by aggregationg its neighbors's representations. A layer's input is a set of node representations ${h_i\in\mathbb{R}^d|i\in\mathcal{V}}$ and the set of edges. A layer's input is a set of node representations ${h^{'}_{i}\in\mathbb{R}^{d^{'}}|i\in\mathcal{V}}$ , where the same parametric function is applied to every node.
+
+$$h_i^{'}=\mathcal{f}_{\theta} (h_i,AGGREGATE({h_j|j\in\mathcal{N}_i}))$$
+
+The design of f and AGGREGATE is what mostly distinguishes one type of GNN from the other. For example, <cheby> hebyshev polynomial instead of average convolution kernel in the process of aggregation.
+
+
+\subsection{GAT}
+In order to make self-adaptive selection among the neighbour message,GAT introduce a model by computes a learned weighted average of the reresentation of $\mathcal{N}_i$. A scoring funtion e:$\mathbb{R}\times\mathbb{R}\to\mathbb{R}$ computes a score for every edge$(j,i)$,which indicates the importance of the features of the neighbor $j$ to the node $i$:
+
+$$e(h_i,h_j)=LeakyReLU(a^T\cdot[Wh_i||Wh_j])  (1)$$
+
+where $a \in \mathbb{R}^{2d}$, $\mathcal{W} \in \mathbb{R}^{d_0}\times\mathbb{R}^{d_0}$ are learned, and $||$ denotes vector concatenation. These attention scores
+are normalized across all neighbors $j \in N_i$ using softmax, and the attention function is defined as:
+$$\alpha_{(i,j)}=softmax_i(e(h_i,h_j))=\frac{exp(e(h_i,h_j))}{\sum_{k\in\mathcal{N}_i}exp(h_i,h_k)}$$
+Then, GAT computes a weighted average of the transformed features of the neighbor nodes (followed
+by a nonlinearity $\sigma$ as the new representation of i, using the normalized attention coefficients:
+$$h_i^{'}=\sigma(\sum_{j\in\mathcal{N}_i}\alpha_{ij}\cdot Wh_i )$$
+
+(1)mathematically equals to 
+$$e(h_i,h_j)=LeakyReLU(a_1^T\cdot Wh_i+a_2^T\cdot Wh_j)  (4)$$
+where $a_1,a_2\in \mathbb{R}^{d_0}$, and $concat(a_1,a_2)=a$. (4)This indicates that the calculated weights are equal to the sum of one-dimensional projections for nodes connected by edges, which is represented as a static attention structure in GATv2%<!--引用gatv2-->.
+In this paper, we introduce that since messages are continually propagating along the edges of the network during model training, hence the one-dimensional projections of the adjacent points on the graph is very close, which implics the $a_2^TWh_j$ is have a strong similarity. And in the Heterophily graph, highly similar attention matrix will reduce the signal and add more noise causing neural network to learn poorly
+and causing drop in performance.
+
+\section{BUILDING NEW ATTENTION NETWORKS}
+algorithm next page
+
+\begin{algorithm}[tb]
+\caption{Example algorithm}
+\label{alg:algorithm}
+\textbf{Input}: Number of hops $k$,
+    adjacent matrix $\mathcal A$,
+    node feature $\mathcal X$,
+    $\mathit{Linear}_{0\cdots k}$,
+    $\mathit{GNNq}_{1\cdots k}$,
+    $\mathit{GNNk}_{1\cdots k}$,
+    $\mathit{hop\_select}$,
+    $\mathit{W\_att}_{1\cdots k}$\\
+\textbf{Parameter}: Optional list of parameters\\
+\textbf{Output}: Embedding $\mathcal O$
+\begin{algorithmic}[1] %[1] enables line numbers
+\STATE $\mathit{mask}\larr\operatorname{softmax}(\mathit{hop\_select})$
+\STATE $\mathit{list\_out}\larr$ Empty array
+\FOR {$i = 0$ \TO $k$}
+    \STATE $H_i \larr \mathit{Linear_i}(\mathcal X)$
+    \IF {$i > 0$}
+        \STATE $\mathit{w\_att} \larr \operatorname{softmax}(\mathit{W\_att}_i)$
+        \STATE
+            $\langle Q, K \rangle \larr 
+                \langle
+                    \mathit{GNNq}_i(H_i, \mathcal A), 
+                    \mathit{GNNk}_i(H_i, \mathcal A)
+                \rangle
+            $
+        \STATE
+            $\bm\alpha \larr
+                \mathit{w\_att}[0] \cdot 
+                    \operatorname{softmax} \Big( \mathcal A^i, \frac{ QK^{\mathrm T} }{ \sqrt{d} } \Big)
+                +
+                \mathit{w\_att}[1] \cdot \mathcal A^i
+            $
+        \STATE $H_i \larr \bm\alpha H_i$
+    \ENDIF
+    \STATE $\mathit{list\_out} \larr \mathrm{norm}(H_i \cdot \mathit{mask}[i])$
+\ENDFOR
+\RETURN $\sigma(\operatorname{concat}(\mathit{list\_out}))$
+\end{algorithmic}
+\end{algorithm}
+
+where the $hop\_select\in\{\mathbb{R}^{k+1}\},W\_att_{1...k}\in\{\mathbb{R}^2\}$, $\mathcal{A}$ is normalized adjacent. 
+{\small
+$$soft\_max(Mask,Attention)= \frac{exp(Attention[i,j])}{\sum _{Mask[i][k]>0)exp(Attention[i,k])}}$$
+
+}
+%插入attentio方差->
+\subsection{}section{using GNNs to calculate query and key}
+We introduce a characteristic attention structure of Graph Neural Network.<model name> caculation the query and key with 
+$$e(h_i,h_j)=GNN_Q(Wh_i,A)\cdot GNN_k(Wh_j,A)^T$$
+where $GNN_Q,GNN_K\in\{\mathbb{R}^d,G\rarr \mathbb{R}^{d^{'}},G\}$ are learned GNNs such as GCN%(引用).
+$\mathcal{W} \in \mathbb{R}^{d_0}\times\mathbb{R}^{d_0}$
+
+\subsection{skip connection in GATs}
+the technic 'skip connections have been widely used in GNN architecture to overcome the oversmooth in the deep layer GNNs, which combine the resulting neighborhood representation with the node's representation from the last iteration%<!--(JKNEt)--><!--mixhop-->
+.This technics has been considered to be one of the most popular constructions for multi-layer GNN models. However, as the network layer deepens and each node accepts more information through the message propagation. the representation will still be affected by oversmoothing problems, which hinders the attention from generating the selective attention scores. So we perform a parallel structure. The process in which each node receive messages from different hop neighborhoods is set in parallel channels, hence it can generate query and key through shallow Network. 
+
+\subsection{self-adaptively adopt attention layer or GCN layer}
+
+The final matrix for message propagation is the sum of the calculated attention and X in a learnable ratio.[line 8]. if the $w\_att\_i[0]$ is equals to zero, the convolution operation degenerates into a single layer GCN.  We discover that in the dataset, which is higher heterophily, the weight for the attention matrix tends to be higher, which shows that the attention mechanism produces a marked effect. And with hop number increases higher, the weight of the attention matrix becomes lower, which implicits that as the distance between the nodes participating in convolution and the central node increases, the traditional GCN convolution operation makes major contributions.
+%weight for attention and GCN
+
+\subsection{soft select}
+As features are aggregated over many hops, some features are
+useful and correlate with the label distribution, while others are
+
+not very useful for learning and acting more like the noise for the
+
+mode. However, it is easy to trap in a locally optimal stage because many of these hop can make a seemingly right choice. Serveral techic have been introduced to solove the problem%<!--jacobiconv How Powerful are spetral graph neural networks-->,
+
+But it's still hard to achieve the optimization using a fully automatic technique.  We perform a set of uniform initialized weights for the features from each hop%<!--FSGNN-->,
+
+to do some fine tunings by adding weight decay in the $hop\_select$ vector. 
+
+\section{ dataset}
+For fully-supervised node classification tasks, we perform expertments on nine datasets commonly used in graph neural networks
+
+literature. Details of the datasets are listed in %<图片>. 
+
+Cora, Citeseer, and Pubmed are citation networks base datasets and in general. In these networks, nodes represent papers, and edges denote there are citation  relationships between the connected nodes. Node features are the bag-of-words representation of papers.
+
+ 
+
+Wisconsin, Cornell, Texas represent links between webpages. In these datasets, nodes represent web pages, and edges are hyperlinks between them. Node features are the bag-of-words representation of papers.
+
+Chameleon and Squirrel represent the web pages in Wikipedia discussing corresponding topics. Nodes represent web pages and edges are mutual links between them. Node features correspond to some informative nouns in the Wikipedia pages.
+
+To provide a fair comparison, we use publicly available data splits which have been frequently used by researchers for
+experiments in their publications. Results of comparison methods
+
+presented in this paper are also based on this split
+
+\section{Reference Examples}
+\label{sec:reference_examples}
+
+\nobibliography*
+Formatted bibliographies should look like the following examples. You should use BibTeX to generate the references. Missing fields are unacceptable when compiling references, and usually indicate that you are using the wrong type of entry (BibTeX class).
+
+\paragraph{Book with multiple authors~\nocite{em:86}} Use the \texttt{@book} class.\\[.2em]
+\bibentry{em:86}.
+
+\paragraph{Journal and magazine articles~\nocite{r:80, hcr:83}} Use the \texttt{@article} class.\\[.2em]
+\bibentry{r:80}.\\[.2em]
+\bibentry{hcr:83}.
+
+\paragraph{Proceedings paper published by a society, press or publisher~\nocite{c:83, c:84}} Use the \texttt{@inproceedings} class. You may abbreviate the \emph{booktitle} field, but make sure that the conference edition is clear.\\[.2em]
+\bibentry{c:84}.\\[.2em]
+\bibentry{c:83}.
+
+\paragraph{University technical report~\nocite{r:86}} Use the \texttt{@techreport} class.\\[.2em]
+\bibentry{r:86}.
+
+\paragraph{Dissertation or thesis~\nocite{c:79}} Use the \texttt{@phdthesis} class.\\[.2em]
+\bibentry{c:79}.
+
+\paragraph{Forthcoming publication~\nocite{c:21}} Use the \texttt{@misc} class with a \texttt{note="Forthcoming"} annotation.
+\begin{quote}
+\begin{footnotesize}
+\begin{verbatim}
+@misc(key,
+  [...]
+  note="Forthcoming",
+)
+\end{verbatim}
+\end{footnotesize}
+\end{quote}
+\bibentry{c:21}.
+
+\paragraph{ArXiv paper~\nocite{c:22}} Fetch the BibTeX entry from the "Export Bibtex Citation" link in the arXiv website. Notice it uses the \texttt{@misc} class instead of the \texttt{@article} one, and that it includes the \texttt{eprint} and \texttt{archivePrefix} keys.
+\begin{quote}
+\begin{footnotesize}
+\begin{verbatim}
+@misc(key,
+  [...]
+  eprint="xxxx.yyyy",
+  archivePrefix="arXiv",
+)
+\end{verbatim}
+\end{footnotesize}
+\end{quote}
+\bibentry{c:22}.
+
+\paragraph{Website or online resource~\nocite{c:23}} Use the \texttt{@misc} class. Add the url in the \texttt{howpublished} field and the date of access in the \texttt{note} field:
+\begin{quote}
+\begin{footnotesize}
+\begin{verbatim}
+@misc(key,
+  [...]
+  howpublished="\url{http://...}",
+  note="Accessed: YYYY-mm-dd",
+)
+\end{verbatim}
+\end{footnotesize}
+\end{quote}
+\bibentry{c:23}.
+
+\vspace{.2em}
+For the most up to date version of the AAAI reference style, please consult the \textit{AI Magazine} Author Guidelines at \url{https://aaai.org/ojs/index.php/aimagazine/about/submissions#authorGuidelines}
+
+% Use \bibliography{yourbibfile} instead or the References section will not appear in your paper
+\nobibliography{aaai23}
+
+\section{Acknowledgments}
+AAAI is especially grateful to Peter Patel Schneider for his work in implementing the original aaai.sty file, liberally using the ideas of other style hackers, including Barbara Beeton. We also acknowledge with thanks the work of George Ferguson for his guide to using the style and BibTeX files --- which has been incorporated into this document --- and Hans Guesgen, who provided several timely modifications, as well as the many others who have, from time to time, sent in suggestions on improvements to the AAAI style. We are especially grateful to Francisco Cruz, Marc Pujol-Gonzalez, and Mico Loretan for the improvements to the Bib\TeX{} and \LaTeX{} files made in 2020.
+
+The preparation of the \LaTeX{} and Bib\TeX{} files that implement these instructions was supported by Schlumberger Palo Alto Research, AT\&T Bell Laboratories, Morgan Kaufmann Publishers, The Live Oak Press, LLC, and AAAI Press. Bibliography style changes were added by Sunil Issar. \verb+\+pubnote was added by J. Scott Penberthy. George Ferguson added support for printing the AAAI copyright slug. Additional changes to aaai23.sty and aaai23.bst have been made by Francisco Cruz, Marc Pujol-Gonzalez, and Mico Loretan.
+
+\bigskip
+\noindent Thank you for reading these instructions carefully. We look forward to receiving your electronic files!
+
+\end{document}
